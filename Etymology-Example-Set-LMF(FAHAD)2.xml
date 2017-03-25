@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LexicalResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///C:/Users/Fahad%20Khan/Desktop/LMF/LMF_schema.xsd">
+    <GlobalInformation>
+        <feat att="label" val="Jack's Etymological Examples: Fahad's version/re-envisioning"></feat>
+    </GlobalInformation>
+    <Lexicon>
+        <LexicalEntry id="Perdere">
+             <feat att="language" val="it"/>
+             <feat att="partOfSpeech" val="verb"/> 
+            <Lemma>
+                <feat att="writtenForm" val="perdere"/> 
+            </Lemma>
+            <Etymology type = "Inheritance">
+                <Etymon target = "PerdereLA">    
+                </Etymon>
+            </Etymology>
+        </LexicalEntry>
+
+        <LexicalEntry id="PerdereLA">
+            <feat att="language" val="la"/>
+            <Lemma>
+                <feat att="writtenForm" val="perdere"/>
+            </Lemma>
+        </LexicalEntry>
+        
+        
+        <!-- VINU example: I've tried to develop this using my idea of making Etymon the description of a mapping. 
+        The point is that sometimes you will want to target a form or a morphological variant of a word using Etymon rather than a whole LexicalEntry. 
+        Of course the fact that FormRepresentation doesn't have an id attribute poses difficulties for this way of looking at things. 
+        But I've pretended that FormRepresentation does have an id (in the hope that perhaps there's someway of making this happen).
+        Otherwise how else would you represent the fact that e.g., omnibus in English comes from the dative plural form of omnis in Latin? 
+        You could of course always make the target of Etymon a LexicalEntry and then add other attributes based on whether it is based
+        <on a morphological variant  -->
+        <LexicalEntry id = "Vinu-egl">
+            <feat att="language" val="egl"/>
+            <Lemma>
+                <FormRepresentation>
+                    <feat att="phoneticForm" script="ipa" val="veŋ"/>
+                </FormRepresentation>
+            </Lemma>
+            <Sense>
+                <feat att="gloss" val="wine"/>
+            </Sense>
+            <Etymology type ="Inheritance">
+                <!-- What I called Process in the diagrams is now called Chain (Process already taken for something else). -->
+                <Chain>
+                    <Etymon id = "vinu" target = "vinuFR">
+                        <LexicalEntry>
+                            <Lemma>
+                                <FormRepresentation id= "vinuFR">
+                                <feat att="writtenForm" val="VINU"/>
+                                </FormRepresentation>
+                            </Lemma>
+                    </LexicalEntry>
+                    </Etymon>
+                    <Etymon id="vin" target = "vinFR"/>
+                    <Etymon id="vĩn" target = "vĩnFR"/>
+                    <Etymon id="vĩː" target = "vĩːFR"/>
+                    <Etymon id="vẽː" target = "vẽːFR"/>
+                    <Etymon id="vẽŋ" target = "vẽŋFR"/>
+                    <Etymon id="veŋ" target = "veŋFR"/>
+                </Chain>
+            </Etymology>
+        </LexicalEntry>
+        <!-- The following LexicalEntries are needed because they donate their FormRepresentations to Vinu's etymological chain (although I've put vinu inside the Etymon!. 
+        Generally the idea should be to put LexicalEntries inside Etymon if they're going to be referenced by -->
+        
+
+        <LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id = "vinFR">
+                    <feat att="phoneticForm" script="ipa" val="vin"/>
+                </FormRepresentation>
+			</Lemma>
+		</LexicalEntry>					
+		<LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id = "vĩnFR">
+                    <feat att="phoneticForm" script="ipa" val="vĩn"/>
+                </FormRepresentation>
+            </Lemma>
+		</LexicalEntry>				
+		<LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id = "vĩːFR">
+                    <feat att="phoneticForm" script="ipa" val="vĩː"/>
+                </FormRepresentation>
+			</Lemma>
+		</LexicalEntry>			
+		<LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id = "vẽːFR">
+                    <feat att="phoneticForm" script="ipa" val="vẽː"/>
+                </FormRepresentation>
+            </Lemma>
+		</LexicalEntry>	
+		<LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id = "vẽŋFR">
+                    <feat att="phoneticForm" script="ipa" val="vẽŋ"/>
+                </FormRepresentation>
+            </Lemma>
+		</LexicalEntry>	
+		<LexicalEntry>	
+			<Lemma>
+                <FormRepresentation id="veŋFR">
+                    <feat att="phoneticForm" script="ipa" val="veŋ"/>
+                </FormRepresentation>
+            </Lemma>
+		</LexicalEntry>	
+        
+    <!-- Nação Example -->
+
+    <LexicalEntry id="Nação">
+        <!-- Inherited features (for Entry) here -->
+        <feat att="language" val="pt"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <feat att="grammaticalGender" val="fem"/>
+        <Lemma>
+            <feat att="writtenForm" val="nação"/>
+        </Lemma>
+        
+        <WordForm id="nação-pt-sg"><!-- @id not allowed in WordForm, why? -->
+            <feat att="writtenForm" val="nação"/>
+            <feat att="phoneticForm" val="nɐˈsɐ̃w"/><!--need @script to label IPA!  -->
+            <feat att="grammaticalNumber" val="singular"/> 
+            <!-- could have: feat @lexicalType="inflection" -->
+        </WordForm>
+        
+        <WordForm id="nação-pt-pl">
+            <feat att="writtenForm" val="nações"/>
+            <feat att="phoneticForm" val="nɐˈs͜õj̃s"/>
+            <feat att="grammaticalNumber" val="plural"/>
+            <!-- could have: feat @lexicalType="inflection" -->
+        </WordForm>
+        
+        <Etymology type="Inheritance">
+            <!-- morpho-syntactic changes could be explicitly labeled (embedded Etymology (or create a feat type="process"))-->
+            <Chain>
+                <Etymon>
+                    <LexicalEntry>
+                        <!-- Inherited features (for Etym) here -->
+                        <!-- could also put '/feat[@language @val="la-x-VL"] here -->
+                        <feat att="partOfSpeech" val="noun"/>
+                        <feat att="grammaticalGender" val="fem"/>
+                        <feat att="inflectionType" val="-i stem"/><!-- invokes morphologicalPattern (should be target of pointer)?-->
+                       <Lemma>
+                           <feat att="writtenForm" val="nātiōne"/>
+                       </Lemma>
+                    </LexicalEntry>
+                </Etymon>                
+                <Etymon>
+                    <LexicalEntry>
+                    <WordForm>
+                        <feat att="lexicalType" val="inflection"/>
+                        <feat att="grammaticalNumber" val="singular"/>
+                        <feat att="writtenForm" val="nātiōne"/>
+                        <feat att="phoneticForm" val="ˈnaː.tɪ.oːne"/><!-- need @certainty for historic phonetic representations & @script or @notation -->
+                    </WordForm>
+                    </LexicalEntry>
+                </Etymon>
+                
+                <Etymon>
+                    <LexicalEntry>
+                        <WordForm>
+                            <feat att="lexicalType" val="inflection"/>
+                            <feat att="grammaticalNumber" val="plural"/>
+                            <feat att="writtenForm" val="nātiōnēs"/>
+                            <feat att="phoneticForm" val="ˈnaː.tɪ.oːnes"/>
+                        </WordForm>
+                    </LexicalEntry>
+                </Etymon> 
+            </Chain>
+        </Etymology>
+    </LexicalEntry>
+        
+        
+        
+    <!-- Pampelmousse Example -->		
+    <LexicalEntry id="LE1">
+	    <feat att="language" val="fr"/>
+        <feat att="partOfSpeech" val="commonNoun"/>
+        <Lemma>
+            <feat att="writtenForm" val="pamplemousse"/>
+        </Lemma>
+        <Etymology type="Borrowing">
+            <Etymon target="LE2"/>
+        </Etymology>
+    </LexicalEntry>
+	
+	<LexicalEntry id = "LE2">	
+		<feat att="language" val="nl"/>
+        <feat att="partOfSpeech" val="commonNoun"/>
+		<feat att="gramaticalGender" val="fem"/>
+		<Lemma>
+			<feat att="writtenForm" val="pompelmousse"/>
+		</Lemma>
+		<Sense>
+			<feat att="gloss" val="citrus maxima"/>
+			<feat att="note" val="probablement d'origine tamoule, De Vries, Nedrl"/><!-- better label -->
+		</Sense>
+        <ListofComponents>
+            <Component>
+                <LexicalEntry>
+                    <feat att="language" val="nl"/>
+                    <feat val="partOfSpeech" att="adjective"/>
+                    <Lemma>
+                        <feat att="writtenForm" val="pompel"/>
+                    </Lemma>
+                    <Sense>
+                        <feat att="gloss" val="gros, enflé"/>
+                    </Sense>
+                </LexicalEntry>
+                <LexicalEntry>
+                    <feat att="partOfSpeech" val="commonNoun"/>
+                    <Lemma>
+                        <feat att="writtenForm" val="pompel"/>
+                    </Lemma>
+                    <Sense>
+                        <feat att="gloss" val="citron"/>
+                    </Sense>  
+                </LexicalEntry>                    
+            </Component>
+        </ListofComponents>
+	</LexicalEntry>
+        
+        
+	<!-- Le Weekend Example -->
+    <LexicalEntry>
+        <feat att="language" val="fr"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <feat att="grammaticalGender" val="masc"/>
+        <Lemma>
+            <feat att="writtenForm" val="week-end"/>
+        </Lemma>
+        <Sense>
+            <!--http://fr.dbpedia.org/page/Week-end  -->
+            <Definition>
+                <feat att="text" val="Le week-end (variante weekend, comme en anglais), issu de l'anglais weekend; ou la fin de semaine est une période hebdomadaire d’un ou deux jours, généralement le samedi et le dimanche, pendant laquelle la plupart des gens sont au repos."/>
+            </Definition>
+        </Sense>
+        <Etymology type="Borrowing">
+            <Etymon>
+                <LexicalEntry>
+                    <feat att="language" val="en"/>
+                    <feat att="partOfSpeech" val="noun"/>
+                    <Lemma>
+                        <feat att="writtenForm" val="weekend"/>
+                    </Lemma>
+                </LexicalEntry>
+            </Etymon>
+        </Etymology>
+    </LexicalEntry>
+     
+    <!-- Kidney-Bean -->
+    <LexicalEntry>
+        <feat att="language" val="mix"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="ntuchi"/>
+        </Lemma>
+        
+        <Sense id="bean">
+            <MonolingualExternalRef externalSystem ="dbpedia" externalReference ="http://dbpedia.org/resource/Bean"/>
+        </Sense>
+        
+        <Sense id="kidney">
+            <MonolingualExternalRef externalSystem ="dbpedia" externalReference ="http://dbpedia.org/resource/Kidney"/> 
+			<Etymology type = "Metaphor">
+				<Etymon target = "bean"/>
+			</Etymology>
+        </Sense>
+    </LexicalEntry>    
+         
+    <LexicalEntry id="Horse">
+        <Lemma>
+            <feat att="writtenForm" val="kiti"/>
+        </Lemma>
+        <WordForm>
+            <feat att="phoneticForm" script="ipa" val="kìt̪í"/>
+        </WordForm>
+        
+        <Sense id="animal">
+			<MonolingualExternalRef externalSystem ="dbpedia" externalReference ="http://dbpedia.org/resource/Horse" />        
+			<SubjectField>
+                <feat att="domain" val="Living Being"/>
+            </SubjectField>
+        </Sense>
+        
+        <Sense id="horse">
+            <feat att="editorsNote" val="The term comes from the general Mixtepec-Mixtec word for 'animal', it is clearly derrived from the fact that when they encountered horses and the Spanish for the first time (sometime after 1517), they also encountered horses for the first time for which there was no word in the language. They refered to them simply as 'animal' and this use lexicalized in the language."/>
+            <SubjectField>
+                <feat att="domain" val="Animal"/>
+            </SubjectField>
+            
+            <SenseRelation targets="animal">
+                <feat att="hyponymy" val="is_A"/>    
+            </SenseRelation>
+
+            <Etymology type="Metonymy">
+                <Etymon target="animal"/>
+            </Etymology>
+        </Sense>
+    </LexicalEntry>
+        
+        
+    </Lexicon>
+</LexicalResource>

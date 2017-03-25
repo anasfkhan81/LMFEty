@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE feat SYSTEM "DTD_LMF_16.dtd">
+<LexicalResource dtdVersion="16">
+    <GlobalInformation>
+        <feat att="label" val="test daocument for LMF Etymology extension"/>
+    </GlobalInformation>
+    
+<!-- INHERITANCE (LMF) -->
+<!-- Lexicon -->
+
+<Lexicon>
+    <LexicalEntry id="Perdere">
+        <feat att="language" val="it"/>
+        <feat att="partOfSpeech" val="verb"/> 
+        <Lemma>
+            <feat att="writtenForm" val="perdere"/> 
+        </Lemma>
+        <!-- wordForm here (if desired) -->
+        <Sense>
+            <!-- some sense info here -->
+        </Sense>
+        <Etymology type="inheritance">
+            <Etymon lang="la">
+                <Lemma>
+                    <feat att="writtenForm" val="perdere"/>
+                </Lemma>
+            </Etymon>
+        </Etymology>
+    </LexicalEntry> 
+
+
+<!-- INHERITANCE (LMF) -->
+<LexicalEntry id="Semper">
+    <feat att="language" val="srd"/>
+    <feat att="partOfSpeech" val="timeAdverb"/>
+    <Lemma>
+        <feat att="writtenForm" val="semper"/> 
+    </Lemma>
+    <!-- wordForm here (if desired) -->
+    <Sense>
+        <!-- some sense info here -->
+    </Sense>
+    <Etymology type="Inheritance">
+        <Etymon lang="la"><!-- could use @target to point to entry for Latin 'semper' if available -->
+            <Lemma>
+                <feat att="writtenForm" val="semper"/>
+            </Lemma>
+        </Etymon>
+    </Etymology>
+</LexicalEntry> 
+
+    <!-- (IMPLIED) INHERITANCE - PROCESS OF PHONOLOGICAL CHANGE  -->  
+    <LexicalEntry id="Vinu-egl">
+        <feat att="language" val="egl"/>
+        <!-- according to the ISO 639 definition 'Emigliano' is the same thing as 'Bolognese' -->
+        <Lemma>
+            <!-- don't have the written form for this -->
+            <FormRepresentation>
+                <feat att="phoneticForm" script="ipa" val="veŋ"/>
+            </FormRepresentation>
+        </Lemma>
+        <Sense>
+            <!-- other sense info here -->
+            <feat att="gloss" val="wine"/>
+        </Sense>
+        <Etymology type="Inheritance">
+            <!--type="Inheritance" could alternatively be implicit and the value of @type could be something indicating that the changes expressed are phonological in nature; Diachronic Phonological chains can include multiple different phonological processes over its course, these can be optionally labeled with one or more embedded <Etymology> elements which can be explicit typed  -->
+            
+            <!-- could also label this something general like "PhonologicalChain" -->
+            <Etymon id="VINU" lang="la" next="vin"><!-- stage 1: Earliest etymological source form cited -->
+                <Lemma>
+                    <FormRepresentation>
+                        <!-- cannonical written form but also indicated phonetic; how to refer to latin all caps form representation? -->
+                        <feat att="writtenForm" val="VINU"/>
+                    </FormRepresentation>
+                    <!-- could add anothe <FormRepresentation> and add a positided phonetic form from cannonical written Latin form; would need indicator of posited nature and of responsibility of who added it (specifying that it wasn't from the source that the rest of the example is from)  -->
+                </Lemma>
+            </Etymon>
+            
+            <Etymon id="vin" prev="VINU" next="vĩn"><!-- stage 2:  -->
+                <!-- language tag not specified for stage in chronology in source so it isn't here either -->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="vin"/>
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon>
+            
+            <Etymon id="vĩn" prev="vin" next="vĩː"><!-- stage 3:  -->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="vĩn"/>
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon>
+            
+            <Etymon id="vĩː" prev="vĩn" next="vẽː"><!-- stage 4:  -->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="vĩː"/>
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon>
+            
+            <Etymon id="vẽː" prev="vĩː" next="vẽŋ"><!-- stage 5:  -->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="vẽː"/>
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon>
+            
+            <Etymon id="vẽŋ" prev="vẽː" next="veŋ"><!-- stage 6:  -->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="vẽŋ"/>
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon> 
+            
+            <Etymon id="veŋ" prev="vẽŋ" target=""><!-- stage 6:  -->
+                <!-- should this point to lemma form? if so, where to put the @id there, as @id isn't allowed on <Lemma>, <FormRepresentation>, or <feat>-->
+                <Lemma>
+                    <FormRepresentation>
+                        <feat att="phoneticForm" script="ipa" val="veŋ"/><!-- this is synchronic form/stage -->
+                    </FormRepresentation>
+                </Lemma>
+            </Etymon> 
+            
+            <!-- Saunders (1979); Need somewhere to put bibliographic source! -->
+        </Etymology>
+        <!-- Need somewhere to put bibliographic source! -->
+    </LexicalEntry>
+    
+    <!-- Can we use <ConstraintSet> for expressing conditions of a given process? I think it could be uses to express phonological conditions present in certain phonolgical changes-->
+    <!--  
+    <ConstraintSet>
+        <Constraint>
+            <LogicalOperation>
+                
+            </LogicalOperation>
+        </Constraint>
+    </ConstraintSet>
+-->
+    
+    <!-- INHERITANCE WITH  MORPHO-SYNTACTIC CHANGES-->
+    <LexicalEntry id="Nação">
+        <!-- Inherited features (for Entry) here -->
+        <feat att="language" val="pt"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <feat att="grammaticalGender" val="fem"/>
+        <Lemma>
+            <feat att="writtenForm" val="nação"/>
+        </Lemma>
+        
+        <WordForm id="nação-pt-sg"><!-- @id not allowed in WordForm, why? -->
+            <feat att="writtenForm" val="nação"/>
+            <feat att="phoneticForm" val="nɐˈsɐ̃w"/><!--need @script to label IPA!  -->
+            <feat att="grammaticalNumber" val="singular"/> 
+            <!-- could have: feat @lexicalType="inflection" -->
+        </WordForm>
+        
+        <WordForm id="nação-pt-pl">
+            <feat att="writtenForm" val="nações"/>
+            <feat att="phoneticForm" val="nɐˈs͜õj̃s"/>
+            <feat att="grammaticalNumber" val="plural"/>
+            <!-- could have: feat @lexicalType="inflection" -->
+        </WordForm>
+        
+        <Etymology type="Inheritance">
+            <!-- morpho-syntactic changes could be explicitly labeled (embedded Etymology (or create a feat type="process"))--> 
+            
+            <Etymon lang="la-x-VL">
+                <!-- Inherited features (for Etym) here -->
+                <!-- could also put '/feat[@language @val="la-x-VL"] here -->
+                <feat att="partOfSpeech" val="noun"/>
+                <feat att="grammaticalGender" val="fem"/>
+                <feat att="grammaticalCase" val="acc"/>
+                <feat att="inflectionType" val="-i stem"/><!-- invokes morphologicalPattern (should be target of pointer)?-->
+               <Lemma>
+                   <feat att="writtenForm" val="nātiōne"/>
+               </Lemma>
+                
+                <Etymon target="#nação-pt-sg">
+                    <!-- this could possibly be done with just <WordForm> or just '//Etym/feat[i..n]' instead of embedded '//Etymon/WordForm' -->
+                    <WordForm>
+                        <feat att="lexicalType" val="inflection"/>
+                        <feat att="grammaticalNumber" val="singular"/>
+                        <feat att="writtenForm" val="nātiōne"/>
+                        <feat att="phoneticForm" val="ˈnaː.tɪ.oːne"/><!-- need @certainty for historic phonetic representations & @script or @notation -->
+                    </WordForm>
+                </Etymon>
+                
+                <Etymon target="#nação-pt-pl">
+                    <WordForm>
+                        <feat att="lexicalType" val="inflection"/>
+                        <feat att="grammaticalNumber" val="plural"/>
+                        <feat att="writtenForm" val="nātiōnēs"/>
+                        <feat att="phoneticForm" val="ˈnaː.tɪ.oːnes"/>
+                    </WordForm>
+                </Etymon>     
+            </Etymon>
+            <!-- Need feature equivalent to <bibl>:-->
+<!-- <bibl>Sampson, R. (1999). Nasal Vowel Evolution in Romance. New York: Oxford. </bibl> -->
+        </Etymology>
+    </LexicalEntry>
+    
+    <!-- this is just for the referencing needed in <ListOfComponents> -->
+    <LexicalEntry id="Körper">
+        <Lemma>
+            <feat att="writtenForm" val="Körper"/>
+        </Lemma>
+        <Sense>
+            <!-- sense info about Body here  -->
+        </Sense>
+    </LexicalEntry>
+    
+    <!-- this is just for the referencing needed in <ListOfComponents> -->
+    <LexicalEntry id="Hand">
+        <feat att="language" val="de"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="Hand"/>
+        </Lemma>
+        <Sense>
+            <SubjectField>
+                <feat att="domain" val="Body"/>
+            </SubjectField>
+            <SenseRelation targets="Körper">
+                <feat att="meronymy" val="part_Of"/>
+            </SenseRelation>
+        </Sense>
+    </LexicalEntry>
+    
+    <!-- this is just for the referencing needed in <ListOfComponents> -->
+    <LexicalEntry id="Schuh">
+        <feat att="language" val="de"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="Schuh"/>
+        </Lemma>
+        <Sense>
+            <!-- how to cite from external source (e.g. Wictionary)? -->
+            <feat att="definition" val="Bekleidung: äußere Fußbekleidung"/>
+            <SubjectField>
+                <feat att="domain" val="Kleidung"/>
+                <feat att="domain" val="FußbeKleidung"/>
+            </SubjectField>
+            <SenseRelation targets="Kleidung"><!-- may not be necessary if 'Fußbekleidung' is defined as a typeOf :Kleidung  -->
+                <feat att="hyponymy" val="is_A"/>
+            </SenseRelation>
+            <SenseRelation targets="Fußbekleidung">
+                <feat att="hyponymy" val="is_A"/>
+            </SenseRelation>
+        </Sense>
+    </LexicalEntry>
+    
+    <!-- COMPOUNDING: with Metaphor and Metonymy-->
+        <!-- Note: TEI version is only labeled as Compounding and Metaphor-->
+    <LexicalEntry id="Handschuh"><!-- How to label entry as "Compound"? -->
+        <feat att="language" val="de"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="Handschuh"/>
+        </Lemma>
+        <ListOfComponents><!-- WHERE TO PUT THIS? IN ETYM? USE POINTERS?-->
+            <Component entry="Hand">
+                <feat att="writtenForm" val="Hand"/>
+            </Component>
+            <Component entry="Schuh">
+                <feat att="writtenForm" val="Schuh"/>
+            </Component>
+        </ListOfComponents>
+        <Sense>
+            <feat att="definition" val="Bekleidung: äußere Fußbekleidung"/>
+            <SubjectField>
+                <feat att="domain" val="Kleidung"/>
+                <feat att="domain" val="HandbeKleidung"/>
+                <!--while larger domain is still 'Kleidung' (clothes), the specific profile of Handschuh on the domain matrix is altered to specig -->
+            </SubjectField>
+            <SenseRelation targets="Kleidung"><!-- may not be necessary if 'Handbekleidung' is defined as a typeOf :Kleidung  -->
+                <feat att="hyponymy" val="is_A"/>
+            </SenseRelation>
+            <SenseRelation targets="Handbekleidung">
+                <feat att="hyponymy" val="is_A"/>
+            </SenseRelation>
+        </Sense>
+        <Etymology type="Compounding">
+            <Etymology type="Metonymy">
+                <Etymon target="Hand"/>
+                <!-- use of @target equivalent to <EtymologicalLink>
+                sometime may want to just include pointer to avoid redundancy;
+                -->          
+                <!--Etymon should be assumed to inherit domain, sense and all other info from targeted entry   -->
+                <!-- Note: if the target item (Etymon) has multiple senses, pointer must target @id of given sense -->
+            </Etymology>
+            <Etymology type="Metaphor">
+                <Etymon target="Schuh"/>
+            </Etymology>
+        </Etymology>
+    </LexicalEntry>
+    
+    
+    
+    <!-- BORROWING (SALMON-ALT 2006)-->
+    <LexicalEntry id="LE1"><!-- Should this @id be here or on the Lemma? -->
+        <feat att="language" val="fr"/>
+        <feat att="partOfSpeech" val="commonNoun"/>
+        <Lemma>
+            <feat att="writtenForm" val="pamplemousse"/>
+        </Lemma>
+        <Sense>
+            <!-- sense info here -->
+        </Sense>
+        
+        <Etymology type="Borrowing">
+            <feat att="language" val="nl"/>
+            <!-- how to represent link between @source and @target? -->
+            
+            <Etymon id="LE2">
+                <feat att="partOfSpeech" val="commonNoun"/>
+                <feat att="gramaticalGender" val="fem"/>
+                <Lemma>
+                    <feat att="writtenForm" val="pompelmousse"/>
+                </Lemma>
+                <Sense>
+                    <feat att="gloss" val="citrus maxima"/>
+                    <feat att="note" val="probablement d'origine tamoule, De Vries, Nedrl"/><!-- better label -->
+                </Sense>
+            </Etymon>
+            
+            <Etymology type="Compounding">
+                <!-- would be better if we could use <Components> in <LexicalEntry>, should the above portion (#LE2 be expressed in terms of <Components>? -->
+                
+                <Etymon id="LE3"><!-- Component #1 -->
+                    <feat att="language" val="nl"/>
+                    <feat val="partOfSpeech" att="adjective"/>
+                    <Lemma>
+                        <feat att="writtenForm" val="pompel"/>
+                    </Lemma>
+                    <Sense>
+                        <feat att="gloss" val="gros, enflé"/>
+                    </Sense>
+                </Etymon>
+                
+                <Etymon id="LE4"><!-- Component #2 -->
+                    <feat att="language" val="nl"/>
+                    <feat att="partOfSpeech" val="commonNoun"/>
+                    <Lemma>
+                        <feat att="writtenForm" val="pompel"/>
+                    </Lemma>
+                    <Sense>
+                        <feat att="gloss" val="citron"/>
+                    </Sense>
+                </Etymon>
+                <!-- need a Class here -->
+                <feat att="bibl" val="Boulan, König..."/><!-- equiv of <EtymologicalLink> -->
+            </Etymology>
+        </Etymology>
+    </LexicalEntry>
+    
+    <!-- BORROWING -->
+    <LexicalEntry>
+        <feat att="language" val="fr"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <feat att="grammaticalGender" val="masc"/>
+        <Lemma>
+            <feat att="writtenForm" val="week-end"/>
+        </Lemma>
+        <Sense>
+            <!--http://fr.dbpedia.org/page/Week-end  -->
+            <Definition>
+                <feat att="text" val="Le week-end (variante weekend, comme en anglais), issu de l'anglais weekend; ou la fin de semaine est une période hebdomadaire d’un ou deux jours, généralement le samedi et le dimanche, pendant laquelle la plupart des gens sont au repos."/>
+            </Definition>
+        </Sense>
+        <Etymology type="Borrowing">
+            <Etymon>
+                <feat att="language" val="en"/>
+                <feat att="partOfSpeech" val="noun"/>
+                <Lemma>
+                    <feat att="writtenForm" val="weekend"/>
+                </Lemma>
+            </Etymon>
+        </Etymology>
+    </LexicalEntry>
+    
+    
+    <LexicalEntry>
+        <feat att="language" val="ja"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <FormRepresentation>
+                <feat att="writtenForm" orthographyName="Latin" script="rōmaji" val="takushī"/>
+            </FormRepresentation>
+            <FormRepresentation>
+                <feat att="writtenForm" script="Katakana" val="タクシー"/>
+            </FormRepresentation>
+        </Lemma>    
+        <WordForm>
+            <feat att="phoneticForm" script="ipa" val="takushi:"/>
+        </WordForm>
+        <Sense>
+            <!-- http://dbpedia.org/page/Taxicab -->
+            <SubjectField>             
+               <feat att="domain" val="Transportation"/>
+            </SubjectField>
+        </Sense>
+        <Etymology type="Borrowing">
+            <Etymon>
+                <feat att="language" val="en"/>
+                <feat att="partOfSpeech" val="noun"/>
+                <Lemma>
+                    <feat att="writtenForm" val="taxi"/>
+                </Lemma>
+                <WordForm>
+                    <feat att="phoneticForm" script="ipa" val="ˈtæksi"/>
+                </WordForm>
+                <!-- http://en.wiktionary.org/wiki/taxi  -->
+            </Etymon>
+        </Etymology>
+    </LexicalEntry>
+    
+    
+    <!-- SENSE CHANGES (POLYSEMY) - METAPHOR -->
+    <!-- version 1: use multiple Sense elements, <Etymology> embedded in sense -->
+    <LexicalEntry>
+        <feat att="language" val="mix"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="ntuchi"/>
+        </Lemma>
+        
+        <Sense id="bean">
+            <!-- http://dbpedia.org/resource/Bean -->     
+            <feat att="gloss" val="bean"/>
+            <SubjectField>
+                <feat att="domain" val="Legume"/><!-- source domain -->
+                <!-- http://dbpedia.org/resource/Category:Edible_legumes -->
+                <feat att="domain" val="Food"/><!-- source domain (may be redundant if relation between 'Edible_legumes' and 'Food' is defined somewhere -->
+                <feat att="domain" val="Legume"/><!-- source domain -->
+            </SubjectField>
+            <SenseRelation targets="Legume">
+                <feat att="hypernymy" val="is_A"/>
+            </SenseRelation>
+            <SenseRelation targets="Food">
+                <feat att="hypernymy" val="is_A"/>
+            </SenseRelation>
+            <!-- translation here(?) -->
+        </Sense>
+        
+        <Sense id="kidney">
+            <!--http://dbpedia.org/resource/Kidney  -->
+            <feat att="gloss" val="kidney"/>
+            <SubjectField>
+                <feat att="domain" val="InternalOrgan"/><!-- target domain-->
+                <!-- http://dbpedia.org/resource/Category:Organs -->
+            </SubjectField>
+            <SenseRelation targets="InternalOrgan">
+                <feat att="hypernymy" val="is_A"/>
+            </SenseRelation>
+            <SenseRelation targets="Body">
+                <feat att="meronymy" val="part_Of"/>
+            </SenseRelation>
+            <!-- translation here(?) -->
+            
+            <Etymology type="Metaphor">              
+                <!-- (NEED SOME CATEGORY FOR) source domain=Legume (&/or Food...) -->
+                
+                <Etymon target="bean"/>
+                    <!--  @target needed to point to source sense (#bean) -->
+                    <!-- if the second sense of entry is embedded,
+                        do we need to include anything inside the etymon? -->
+            </Etymology>
+        </Sense>
+        
+    </LexicalEntry>
+
+<!-- METAPHOR -->
+    <!-- version 2: new entry for new sense, <Etymology> embedded in sense(?) -->
+    <LexicalEntry>
+        <feat att="language" val="mix"/>
+        <feat att="partOfSpeech" val="noun"/>
+        <Lemma>
+            <feat att="writtenForm" val="ntuchi"/>
+        </Lemma>
+        
+        <Sense id="kidney-i">
+            <!--http://dbpedia.org/resource/Kidney  -->
+            <feat att="gloss" val="kidney"/>
+            <SubjectField>
+                <feat att="domain" val="InternalOrgan"/><!-- target domain-->
+                <!-- http://dbpedia.org/resource/Category:Organs -->
+            </SubjectField>
+            <SenseRelation targets="InternalOrgan">
+                <feat att="hypernymy" val="is_A"/>
+            </SenseRelation>
+            <SenseRelation targets="Body">
+                <feat att="meronymy" val="part_Of"/>
+            </SenseRelation>
+            <!-- translation here(?) -->       
+            
+            <Etymology type="Metaphor">              
+                <Etymon target="bean">   
+                    <!-- this version is explicitly including all info from etymon, but alternatively, it could be assumed to be inherited from target of pointer -->
+                    <Lemma>
+                        <feat att="writtenForm" val="ntuchi"/>
+                    </Lemma>
+                    <Sense>
+                        <!-- http://dbpedia.org/resource/Bean -->     
+                        <feat att="gloss" val="bean"/>
+                        <SubjectField>
+                            <feat att="domain" val="Legume"/><!-- source domain -->
+                            <!-- http://dbpedia.org/resource/Category:Edible_legumes -->
+                            
+                            <feat att="domain" val="Food"/><!-- source domain (may be redundant if relation between 'Edible_legumes' and 'Food' is defined somewhere -->
+                            
+                            <feat att="domain" val="Legume"/><!-- source domain -->
+                        </SubjectField>
+                        <SenseRelation targets="Legume">
+                            <feat att="hypernymy" val="is_A"/>
+                        </SenseRelation>
+                        <SenseRelation targets="Food">
+                            <feat att="hypernymy" val="is_A"/>
+                        </SenseRelation>
+                        <!-- translation here(?) -->
+                    </Sense>
+                </Etymon>
+            </Etymology>
+        </Sense>
+        <!-- OR...Should the <Etymology> be placed outside of <Sense> uniformly? -->
+    </LexicalEntry>
+
+    <!-- METONYMY -->
+    <!-- version 1: use multiple Sense elements, <Etymology> embedded in sense -->
+    <LexicalEntry id="Horse">
+        <Lemma>
+            <feat att="writtenForm" val="kiti"/>
+        </Lemma>
+        <WordForm>
+            <feat att="phoneticForm" script="ipa" val="kìt̪í"/>
+        </WordForm>
+        
+        <Sense id="animal">
+            <SubjectField>
+                <feat att="domain" val="Living Being"/>
+            </SubjectField>
+            <!-- http://dbpedia.org/resource/Horse -->
+        </Sense>
+        
+        <Sense id="horse">
+            <feat att="editorsNote" val="The term comes from the general Mixtepec-Mixtec word for 'animal', it is clearly derrived from the fact that when they encountered horses and the Spanish for the first time (sometime after 1517), they also encountered horses for the first time for which there was no word in the language. They refered to them simply as 'animal' and this use lexicalized in the language."/>
+            <SubjectField>
+                <feat att="domain" val="Animal"/>
+            </SubjectField>
+            
+            <SenseRelation targets="animal">
+                <feat att="hyponymy" val="is_A"/>    
+            </SenseRelation>
+
+            <Etymology type="Metonymy">
+                <!-- need <date>:  = TEI <date notBefore="1517"/> --> 
+                <feat att="date" notBefore="1517"/><!-- need to decide on how to express this -->
+                <Etymon target="animal"/>
+                    <!-- no Lemma or Sense needed because it is same entry -->
+            </Etymology>
+            <!-- Translations here -->
+        </Sense>
+    </LexicalEntry>
+    
+    
+    <!-- METONYMY-->
+    <!-- version 2: new entry for new sense, <Etymology> embedded in sense(?) -->
+    
+    <LexicalEntry>
+        <Lemma>
+            <feat att="writtenForm" val="kiti"/>
+        </Lemma>
+        <WordForm>
+            <feat att="phoneticForm" script="ipa" val="kìt̪í"/>
+        </WordForm>
+
+        <Sense id="horse-i">
+            <feat att="editorsNote" val="The term comes from the general Mixtepec-Mixtec word for 'animal', it is clearly derrived from the fact that when they encountered horses and the Spanish for the first time (sometime after 1517), they also encountered horses for the first time for which there was no word in the language. They refered to them simply as 'animal' and this use lexicalized in the language."/>
+            <SubjectField>
+                <feat att="domain" val="Animal"/>
+            </SubjectField>
+            <SenseRelation targets="animal">
+                <feat att="hyponymy" val="is_A"/><!-- example dataset uses: @att="type" @val="Isa" same as "typeOf"-->
+                <!-- e.g. "horse" is_A "animal" -->
+            </SenseRelation>
+            
+            <Etymology type="Metonymy">
+                <!-- need <date>:  = TEI <date notBefore="1517"/> -->              
+                <Etymon>
+                    <!-- is there really a need to include lemma on polysemy creating processes? -->
+                    <!-- Need a pointer -->
+                    <Lemma>
+                        <feat att="writtenForm" val="kiti"/>
+                    </Lemma>
+                    <Sense>
+                        <SubjectField>
+                            <feat att="domain" val="Living Beings"/>
+                        </SubjectField>
+                        <!-- need pointer to: '//Sense[@id="horse"]' -->
+                        <feat att="gloss" val="horse"/>
+                    </Sense>
+                </Etymon>
+            </Etymology>
+            <!-- Translations here -->
+        </Sense>
+    </LexicalEntry>
+
+</Lexicon>
+</LexicalResource>
